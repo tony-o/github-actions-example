@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        cpan "Locale::Maketext::Simple"
+        'C:\strawberry\perl\bin\cpan.bat' "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work
         git clone https://github.com/rakudo/rakudo.git rakudo
