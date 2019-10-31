@@ -9,7 +9,8 @@ jobs:
       run: |
         SET PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%"
         cinst -y strawberryperl
-        C:\Strawberry\perl\bin\cpan.bat "Locale::Maketext::Simple"
+        cd C:\Strawberry\perl\bin
+        cpan "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work
         git clone https://github.com/rakudo/rakudo.git rakudo
