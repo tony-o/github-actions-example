@@ -7,8 +7,8 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 \
-        cinst strawberryperl \
+        '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64' \
+        'cinst strawberryperl' \
         set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH% \
         mkdir C:\work \
         cd C:\work \
