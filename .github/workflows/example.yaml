@@ -7,17 +7,16 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        '"C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\SetEnv.cmd" /x64' 
-        'cinst strawberryperl' 
-        'set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%' 
-        'mkdir C:\work' 
-        'cd C:\work' 
-        'git clone git clone https://github.com/rakudo/rakudo.git rakudo' 
-        'cd rakudo' 
-        'perl Configure.pl --gen-moar --gen-nqp --backends=moar' 
-        'nmake install' 
-        'SET PATH=C:\work\rakudo\install\share\perl6\site\bin;C:\work\rakudo\install\bin;%PATH%' 
-        'cd C:\work'
+        cinst strawberryperl 
+        set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
+        mkdir C:\work
+        cd C:\work
+        git clone git clone https://github.com/rakudo/rakudo.git rakudo
+        cd rakudo
+        perl Configure.pl --gen-moar --gen-nqp --backends=moar
+        nmake install
+        SET PATH=C:\work\rakudo\install\share\perl6\site\bin;C:\work\rakudo\install\bin;%PATH%
+        cd C:\work
     - name: install zef
       run: |
         perl6 -v
