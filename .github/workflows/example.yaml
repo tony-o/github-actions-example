@@ -12,7 +12,7 @@ jobs:
         cd C:\Strawberry\perl\bin
         cpan "Locale::Maketext::Simple"
         mkdir C:\work
-        cd C:\work
+        cd C:\work 
         git clone https://github.com/rakudo/rakudo.git rakudo
         cd rakudo
         perl Configure.pl --gen-moar --gen-nqp --backends=moar
