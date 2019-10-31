@@ -1,0 +1,9 @@
+{
+  "name": "XYZ",
+  "provides": {
+    "XYZ": "lib/XYZ.pm6"
+  },
+  "auth": "github:tony-o",
+  "version": "0",
+  "api": "0"
+}
