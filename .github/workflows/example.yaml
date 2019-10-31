@@ -8,6 +8,7 @@ jobs:
     - name: prepare raku
       run: |
         SET PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%"
+        cinst -y strawberryperl
         C:\Strawberry\perl\bin\cpan.bat "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work
