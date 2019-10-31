@@ -9,7 +9,7 @@ jobs:
       run: |
         mkdir C:\work
         cd C:\work
-        git clone git clone https://github.com/rakudo/rakudo.git rakudo
+        git clone https://github.com/rakudo/rakudo.git rakudo
         cd rakudo
         perl Configure.pl --gen-moar --gen-nqp --backends=moar
         nmake install
