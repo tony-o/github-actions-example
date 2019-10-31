@@ -7,7 +7,8 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        'C:\strawberry\perl\bin\cpan.bat' 'Locale::Maketext::Simple'
+        SET PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%"
+        cpan "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work
         git clone https://github.com/rakudo/rakudo.git rakudo
