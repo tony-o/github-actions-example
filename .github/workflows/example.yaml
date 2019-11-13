@@ -5,24 +5,23 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-    - name: prepare raku
+    - name: set path
       shell: cmd
-      run: |
-        set PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%";
-        set GIT_TRACE_PACKET=1;
-        set GIT_TRACE=1;
-        set GIT_CURL_VERBOSE=1;
-        cinst -y strawberryperl;
-        C:\strawberry\c\bin\cpan "Locale::Maketext::Simple";
-        mkdir C:\work;
-        cd C:\work ;
-        git --version;
-        git clone --verbose "git@github.com:rakudo/rakudo.git" rakudo;
-        cd rakudo;
-        perl Configure.pl --gen-moar --gen-nqp --backends=moar;
-        nmake install;
-        SET PATH="C:\work\rakudo\install\share\perl6\site\bin;C:\work\rakudo\install\bin;%PATH%";
-        cd C:\work;
+      run: setx /M PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%";
+    - name: install perl deps
+      shell: cmd
+      run: cpan "Locale::Maketext::Simple"
+    - name: set up dirs
+      shell: cmd
+      run: mkdir C:\work
+    - name: checkout rakudo
+      run: git clone --verbose "https://github.com/rakudo/rakudo.git" c:\work\rakudo
+#
+#          cd rakudo;
+#          perl Configure.pl --gen-moar --gen-nqp --backends=moar;
+#          nmake install;
+#          SET PATH="C:\work\rakudo\install\share\perl6\site\bin;C:\work\rakudo\install\bin;%PATH%";
+#          cd C:\work;
     - name: install zef
       run: |
         perl6 -v
