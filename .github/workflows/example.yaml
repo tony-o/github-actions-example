@@ -7,7 +7,8 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        $env:PATH += ";C:/strawberry/c/bin;C:/strawberry/perl/site/bin;C:/strawberry/perl/bin"
+        $env:PATH = ";C:/strawberry/c/bin;C:/strawberry/perl/site/bin;C:/strawberry/perl/bin;${env:PATH}"
+        PATH
         $env:GIT_TRACE_PACKET = 1
         $env:GIT_TRACE = 1
         $env:GIT_CURL_VERBOSE = 1
