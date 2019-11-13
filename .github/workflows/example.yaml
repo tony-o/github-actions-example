@@ -8,7 +8,8 @@ jobs:
     - name: set path
       run: setx /M PATH "C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%";
     - name: install perl deps
-      run: cpan "Locale::Maketext::Simple"
+      #run: cpan "Locale::Maketext::Simple"
+      run: echo ${env:PATH}
     - name: set up dirs
       run: mkdir C:\work
     - name: checkout rakudo
