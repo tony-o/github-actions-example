@@ -14,8 +14,7 @@ jobs:
     - name: checkout rakudo
       run: git clone --verbose "https://github.com/rakudo/rakudo.git" c:\work\rakudo
     - name: configure
-      shell: cmd
-      run: cd c:\work\rakudo ; perl Configure.pl --gen-moar --gen-nqp --backends=moar
+      run: perl "c:\work\rakudo\Configure.pl" --gen-moar --gen-nqp --backends=moar
     - name: make/install
       run: cd c:\work\rakudol nmake install
 #
