@@ -6,9 +6,9 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: set path
-      run: setx /M PATH "C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;${env:PATH}";
+      run: setx /M PATH "C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;${env:PATH}";
     - name: install perl deps
-      run: c:\strawberry\perl\bin\cpan.bat "Locale::Maketext::Simple"
+      run: cpan.bat "Locale::Maketext::Simple"
     - name: set up dirs
       run: mkdir C:\work
     - name: checkout rakudo
