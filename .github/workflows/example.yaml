@@ -6,13 +6,10 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: set path
-      shell: cmd
       run: setx /M PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%";
     - name: install perl deps
-      shell: cmd
       run: cpan "Locale::Maketext::Simple"
     - name: set up dirs
-      shell: cmd
       run: mkdir C:\work
     - name: checkout rakudo
       run: git clone --verbose "https://github.com/rakudo/rakudo.git" c:\work\rakudo
