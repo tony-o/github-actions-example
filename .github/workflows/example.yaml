@@ -8,11 +8,15 @@ jobs:
     - name: prepare raku
       run: |
         SET PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%"
+        SET GIT_TRACE_PACKET=1
+        SET GIT_TRACE=1
+        SET GIT_CURL_VERBOSE=1
         cinst -y strawberryperl
         cd C:\Strawberry\perl\bin
         cpan "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work 
+        git --version
         git clone --verbose "https://github.com/rakudo/rakudo.git" rakudo
         cd rakudo
         perl Configure.pl --gen-moar --gen-nqp --backends=moar
