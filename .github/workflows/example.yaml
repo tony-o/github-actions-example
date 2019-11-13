@@ -12,7 +12,6 @@ jobs:
         SET GIT_TRACE=1
         SET GIT_CURL_VERBOSE=1
         cinst -y strawberryperl
-        cd C:\Strawberry\perl\bin
         cpan "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work 
