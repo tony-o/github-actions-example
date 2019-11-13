@@ -11,7 +11,6 @@ jobs:
         $env:GIT_TRACE_PACKET = 1
         $env:GIT_TRACE = 1
         $env:GIT_CURL_VERBOSE = 1
-        cinst -y strawberryperl
         cpan "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work 
