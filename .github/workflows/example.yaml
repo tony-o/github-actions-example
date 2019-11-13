@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: prepare raku
       run: |
-        set PATH="C:\strawberry\c\bin;C:\strawberry\perl\site\bin;C:\strawberry\perl\bin;%PATH%"
+        set PATH="C:\\strawberry\\c\\bin;C:\\strawberry\\perl\\site\\bin;C:\\strawberry\\perl\\bin;%PATH%"
         set GIT_TRACE_PACKET=1
         set GIT_TRACE=1
         set GIT_CURL_VERBOSE=1
