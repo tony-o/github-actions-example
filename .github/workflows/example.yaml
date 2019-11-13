@@ -6,13 +6,14 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: prepare raku
+      shell: cmd
       run: |
-        $env:PATH = ";C:/strawberry/c/bin;C:/strawberry/perl/site/bin;C:/strawberry/perl/bin;${env:PATH}"
-        PATH
-        $env:GIT_TRACE_PACKET = 1
-        $env:GIT_TRACE = 1
-        $env:GIT_CURL_VERBOSE = 1
-        cpan "Locale::Maketext::Simple"
+        set PATH="C:\\strawberry\\c\\bin;C:\\strawberry\\perl\\site\\bin;C:\\strawberry\\perl\\bin;%PATH%"
+        set GIT_TRACE_PACKET=1
+        set GIT_TRACE=1
+        set GIT_CURL_VERBOSE=1
+        cinst -y strawberryperl
+        C:\strawberry\c\bin\cpan.bat "Locale::Maketext::Simple"
         mkdir C:\work
         cd C:\work 
         git --version
